@@ -1,0 +1,57 @@
+ ​
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Registration Page</title>
+<meta charset="utf-8">
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="card mt-3 bg-secondary text-white">
+					<div class="card-body">
+						<h1 class="text-center">Registration</h1><br>
+						<form th:action="@{/api/v1/blance}" method="post"
+							th:object="${blance}">
+							<div class="form-group">
+								<select th:field="*{debit}" class="form-control">
+								<option value="default">Select a country</option>
+									<option th:value="credit" th:text="Credit"></option>
+									<option th:value="debit" th:text="Debit"></option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label class="control-level" for="number">Blance</label> <input
+									th:field="*{blance}" type="number" class="form-control"
+									id="number" required="required" autofocus="autofocus"
+									placeholder="Enter the blance">
+							</div>
+
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary">Register</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	​
+
+</body>
+</html>
+​
